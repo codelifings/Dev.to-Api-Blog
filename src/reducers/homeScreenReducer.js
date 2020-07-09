@@ -1,5 +1,5 @@
-import { ARTICLE_LIST_SUCCESS, ARTICLE_LIST_REQUEST, ARTICLE_LIST_FAIL} from '../constants/banner'
-import { ARTICLE_DETAILS_REQUEST, ARTICLE_DETAILS_FAIL, ARTICLE_DETAILS_SUCCESS} from '../constants/article'
+import { ARTICLE_LIST_SUCCESS, ARTICLE_LIST_REQUEST, ARTICLE_LIST_FAIL,ARTICLE_DETAILS_REQUEST,ARTICLE_DETAILS_SUCCESS, ARTICLE_DETAILS_FAIL } from '../constants/banner'
+
 
 
 function articleListReducer(state={articles:[]}, action){
@@ -19,7 +19,7 @@ function articleListReducer(state={articles:[]}, action){
 
 
 
-function articleDetailsReducer(state={article:[]}, action){
+function articleDetailsReducer(state={articles:[]}, action){
 
 
     switch(action.type){

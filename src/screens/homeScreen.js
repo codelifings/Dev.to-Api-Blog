@@ -2,16 +2,29 @@ import React,{useEffect} from 'react'
 import {listArticles} from '../action/homeAction';
 import {useSelector , useDispatch} from 'react-redux';
 import {Link} from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
+const useStyles = makeStyles((theme) => ({
+        root: {
+         
+          display: 'flex',
+          '& > * + *': {
+            marginLeft: '50px',
+          },
+        },
+      }));
 
 
 export default function HomeScreen(props) {
    
-   
+    
    
     const articleList = useSelector(state => state.articleList);
     const {articles, loading, error}= articleList;
 
     const dispatch = useDispatch();
+    const classes = useStyles();
 
 
     useEffect (()=>{
@@ -23,14 +36,14 @@ export default function HomeScreen(props) {
     }, [])
 
 
-    return loading? <div className="loading-screen"> Loading..</div>:
+    return loading? <div className="loading" ><CircularProgress color="secondary" /></div>:
     error? <div>{error}</div>:
     <ul className="articles">
        <div className="box"> {
             
             articles.map(article =>
                
-                <li key={articles.id}>
+                <li key={article.id}>
 
                     <div className="main-box">
                     <div className="article-title">
@@ -45,7 +58,7 @@ export default function HomeScreen(props) {
 
             
             <div className="article-tags">Tags: #{article.tag_list[0]},  #{article.tag_list[1]}, #{article.tag_list[2]}</div>
-                </div></li>
+            </div></li>
 
                 )
         }</div>

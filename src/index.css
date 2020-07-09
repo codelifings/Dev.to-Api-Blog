@@ -44,14 +44,11 @@ body{
   display: inline-block;
 }
 
-.loading-screen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  color: rgb(207, 129, 10);
-  font-size: 34px;
+.loading{
+  margin-left: 49%;
+  margin-top: 20%;
 }
+
 
 .box{
   padding: 50px;

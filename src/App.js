@@ -3,6 +3,7 @@ import './App.css';
 import { Link, BrowserRouter, Route } from 'react-router-dom'
 
 import HomeScreen from './screens/homeScreen'
+import ArticleScreen from './screens/articleScreen';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
     <main className="main">
       <div className="content">
         <Route path ='/' exact={true} component={HomeScreen}/>
+        <Route path='/api/articles/:id' component={ArticleScreen} />
       </div>
     </main>
 
