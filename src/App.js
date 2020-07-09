@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Link, BrowserRouter, Route } from 'react-router-dom'
+
+import HomeScreen from './screens/homeScreen'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+    
+    <div className="grid-container">
+
+    <header className="header">
+      <div className="name">
+        <Link to ="/" >Hemant</Link>
+      </div>
+
+      <div className="header-links"> 
+
+      <a className="social-link" href="https://github.com/8bithemant" target="_blank">Github</a>
+     
+      </div>
+    </header>
+
+
+    <main className="main">
+      <div className="content">
+        <Route path ='/' exact={true} component={HomeScreen}/>
+      </div>
+    </main>
+
+
+
+
+
     </div>
-  );
+    
+    </BrowserRouter>
+  )
 }
 
 export default App;
