@@ -29,6 +29,10 @@ function App() {
       </div>
     </main>
 
+    <footer className="footer">
+     <div className="footer-main">  Designed By Hemant; </div> 
+    </footer>
+
 
 
 

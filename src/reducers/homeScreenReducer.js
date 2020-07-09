@@ -1,4 +1,5 @@
 import { ARTICLE_LIST_SUCCESS, ARTICLE_LIST_REQUEST, ARTICLE_LIST_FAIL} from '../constants/banner'
+import { ARTICLE_DETAILS_REQUEST, ARTICLE_DETAILS_FAIL, ARTICLE_DETAILS_SUCCESS} from '../constants/article'
 
 
 function articleListReducer(state={articles:[]}, action){
@@ -16,4 +17,25 @@ function articleListReducer(state={articles:[]}, action){
     }
 }
 
-export {articleListReducer}
+
+
+function articleDetailsReducer(state={article:[]}, action){
+
+
+    switch(action.type){
+      case ARTICLE_DETAILS_REQUEST:
+          return {loading: true}
+      case ARTICLE_DETAILS_SUCCESS:
+          return {loading: false, articles: action.payload}
+      case ARTICLE_DETAILS_FAIL:
+          return {loading: false, error:action.payload}
+      default:
+          return state
+    }
+}
+
+
+
+
+
+export {articleListReducer, articleDetailsReducer}
