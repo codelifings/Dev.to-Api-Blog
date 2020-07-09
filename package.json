@@ -1,6 +1,5 @@
 {
   "name": "devto",
-  "proxy": "https://dev.to",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
