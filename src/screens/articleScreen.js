@@ -18,54 +18,41 @@ function ArticleScreen(props){
         return()=>{
 
         }
-    },[])
+    },[dispatch, props.match.params.id])
 
 
-    return <div>
-            {loading? <div>Loading..</div>:
-            error? <div>{error}</div>:
-            (
+    return (
+        <div>
+            {
+                loading ? <div>Loading..</div> :
+                error ? <div>{error}</div> :
+                (
                 <div className='box'>
                     <div className="cover-image">
                         <img src={articles.cover_image} />
-                         </div>
-
+                    </div>
                     {/* <div className="reactions">
                      {articles.public_reaction_count}
                      {articles.comments_count}
                     </div> */}
-                   
-                <div className="main">
-                   <ul>
-                    <li className="title-article" >
-                        <h2>
-                            {articles.title}
-                        </h2>
-                    </li>
-
-
-
-                   </ul>
-                   
+                    <div className="main">
+                        <ul>
+                        <li className="title-article" >
+                            <h2>
+                                {articles.title}
+                            </h2>
+                        </li>
+                        </ul>
                     </div>
-
                     <div className="body">
                         <ReactMarkdown source={articles.body_markdown} />
                     </div>
-
-
                     <div className="about-the-author">
-
                         {/* {articles.user} */}
                     </div>
-
-
-                    </div>
-            )}
-
-
-
-    </div>
+                </div>)
+            }
+        </div>);
 }
 
 export default ArticleScreen;
