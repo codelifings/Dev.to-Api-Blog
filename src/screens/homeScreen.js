@@ -32,11 +32,11 @@ export default function HomeScreen(props) {
 
   return loading ? <div className="loading" ><CircularProgress color="secondary" /></div> :
     error ? <div>{error}</div> :
-    <ul className="articles">
+    <div className="articles">
       <div className="box">
         {
           articles.map( article => <Article data={article} />)
         }
       </div>
-    </ul>
+    </div>
 }

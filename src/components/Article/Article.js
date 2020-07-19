@@ -1,13 +1,17 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import '../../index.css';
+import './article.css';
 
 const Article = (props) => {
   const article = props.data;
+  const image = article.cover_image;
+
+  console.log(article)
 
   return (
-    <li key={article.id}>
+    <div className="article-card" key={article.id}>
+      <div className="article-image" style={{backgroundImage: `url(${article.cover_image})`}}></div>
       <div className="main-box">
         <div className="article-title">
           <Link className="title" to ={'/api/articles/' + article.id}>{article.title}</Link>
@@ -19,7 +23,7 @@ const Article = (props) => {
           Tags: #{article.tag_list[0]},  #{article.tag_list[1]}, #{article.tag_list[2]}
         </div>
       </div>
-    </li>
+    </div>
   );
 };
 
